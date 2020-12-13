@@ -21,7 +21,7 @@ python3 -m pipenv run pytest # run unit, system and integration tests
 
 ```bash
 python3 -m pipenv install -e . # Compile and package application  
-python3 setup.py install # Install the compiled and packaged application, dealt with 
+python3 setup.py install # Install the compiled and packaged application, dealt with by the Docker Compose file
 ```
 
 ## Start the packaged application in docker
@@ -30,7 +30,7 @@ python3 setup.py install # Install the compiled and packaged application, dealt 
 docker-compoe -f docker-compose.yaml up --build --force-recreate
 ```
 
-## Sync setup.py with Pipfile
+## Sync setup.py installation file with Pipfile requirements file
 
 ```bash
 python3 -m pipenv run
