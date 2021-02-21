@@ -1,4 +1,4 @@
-#     Copyright 2020 JSquad AB
+#     Copyright 2021 JSquad AB
 #
 #     Licensed under the Apache License, Version 2.0 (the "License");
 #     you may not use this file except in compliance with the License.
@@ -12,3 +12,15 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
+from pathlib import Path
+
+import kaggle
+
+
+class FiddoMitten:
+    def __init__(self):
+        kaggle.api.authenticate()
+
+    def downloadCatAndDogsImages(self):
+        IMAGE_DIRECTORY = str(Path(__file__).parent) + "/../../IMAGES/" + self.__class__.__name__
+        kaggle.api.dataset_download_files('shaunthesheep/microsoft-catsvsdogs-dataset', path=IMAGE_DIRECTORY, unzip=True)

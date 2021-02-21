@@ -1,4 +1,4 @@
-#     Copyright 2020 JSquad AB
+#     Copyright 2021 JSquad AB
 #
 #     Licensed under the Apache License, Version 2.0 (the "License");
 #     you may not use this file except in compliance with the License.
@@ -12,17 +12,23 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
+import os
+import unittest
+from pathlib import Path
 from unittest import TestCase
 
-from botai.botir import botir
+from botai.fiddomitten import fiddomitten
 
 
-class TestBotImageRecognizer(TestCase):
+@unittest.skip("Not setup with proper kaggle credentials")
+class TestFiddoMittenRecognizer(TestCase):
     def setUp(self):
-        self.botir = botir.BotImageRecognizer()
+        self.fiddomitten = fiddomitten.FiddoMitten()
 
     def tearDown(self):
-        self.botir = None
+        self.fiddomitten = None
 
-    def test_tell_what_the_word_is(self):
-        self.assertEqual("I recognised the word, the word is test 2", self.botir.tellWhatTheWordIs("test 2"))
+    def test_the_created_images_directoy_with_cats_and_dogs(self):
+        self.fiddomitten.downloadCatAndDogsImages()
+        IMAGE_DIRECTORY = str(Path(__file__).parent) + "/../IMAGES/" + self.fiddomitten.__class__.__name__
+        self.assertTrue(os.listdir(IMAGE_DIRECTORY))

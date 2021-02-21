@@ -1,4 +1,4 @@
-#     Copyright 2020 JSquad AB
+#     Copyright 2021 JSquad AB
 #
 #     Licensed under the Apache License, Version 2.0 (the "License");
 #     you may not use this file except in compliance with the License.
@@ -19,15 +19,15 @@ https://github.com/pypa/sampleproject
 Modified by Madoshakalaka@Github (dependency links added)
 """
 
-# Always prefer setuptools over distutils
-from setuptools import setup, find_packages
-from os import path
-
 # io.open is needed for projects that support Python 2.7
 # It ensures open() defaults to text mode with universal newlines,
 # and accepts an argument to specify the text encoding
 # Python 3 only projects can skip this import
 from io import open
+from os import path
+
+# Always prefer setuptools over distutils
+from setuptools import setup, find_packages
 
 here = path.abspath(path.dirname(__file__))
 
@@ -147,10 +147,18 @@ setup(
     # https://packaging.python.org/en/latest/requirements.html
     install_requires=[
         "absl-py==0.11.0",
+        "appdirs==1.4.4",
         "astunparse==1.6.3",
+        "attrs==20.3.0; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+        "black==19.10b0; python_version >= '3.6'",
+        "cached-property==1.5.2",
         "cachetools==4.2.0; python_version ~= '3.5'",
+        "cerberus==1.3.2",
         "certifi==2020.12.5",
         "chardet==3.0.4",
+        "click==7.1.2; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
+        "colorama==0.4.4; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
+        "distlib==0.3.1",
         "gast==0.3.3; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
         "google-auth==1.24.0; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4, 3.5'",
         "google-auth-oauthlib==0.4.2; python_version >= '3.6'",
@@ -159,28 +167,50 @@ setup(
         "h5py==2.10.0",
         "idna==2.10; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
         "importlib-metadata==3.1.1; python_version < '3.8'",
+        "kaggle==1.5.10",
         "keras-preprocessing==1.1.2",
         "markdown==3.3.3; python_version >= '3.6'",
         "numpy==1.18.5",
         "oauthlib==3.1.0; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
         "opt-einsum==3.3.0; python_version >= '3.5'",
+        "orderedmultidict==1.0.1",
+        "packaging==20.9; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+        "pathspec==0.8.1",
+        "pep517==0.9.1",
+        "pip-shims==0.5.3; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
+        "pipenv-setup==3.1.1; python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2, 3.3' and python_version < '4'",
+        "pipfile==0.0.2",
+        "plette[validation]==0.2.3; python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2, 3.3'",
         "protobuf==3.14.0",
         "pyasn1==0.4.8",
         "pyasn1-modules==0.2.8",
+        "pyparsing==2.4.7; python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+        "python-dateutil==2.8.1; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+        "python-slugify==4.0.1",
+        "regex==2020.11.13",
         "requests==2.25.0; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
         "requests-oauthlib==1.3.0",
+        "requirementslib==1.5.16; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
         "rsa==4.6; python_version >= '3.6'",
         "six==1.15.0; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+        "split-folders==0.4.3",
         "tensorboard==2.4.0; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
         "tensorboard-plugin-wit==1.7.0",
         "tensorflow==2.3.1",
         "tensorflow-estimator==2.3.0",
         "termcolor==1.1.0",
+        "text-unidecode==1.3",
+        "toml==0.10.2; python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+        "tomlkit==0.7.0; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
+        "tqdm==4.57.0; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+        "typed-ast==1.4.2",
+        "typing==3.7.4.3; python_version < '3.7'",
         "urllib3==1.26.2; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_version < '4'",
+        "vistir==0.5.2; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
         "werkzeug==1.0.1; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
         "wheel==0.36.1; python_version >= '3'",
         "wrapt==1.12.1",
-        "zipp==3.4.0; python_version >= '3.6'",
+        "zipp==3.4.0; python_version >= '3.6' and python_version < '3.8'",
     ],  # Optional
     # List additional groups of dependencies here (e.g. development
     # dependencies). Users will be able to install these using the "extras"
