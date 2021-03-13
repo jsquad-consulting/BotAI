@@ -12,7 +12,7 @@ python3 -m pip install pipenv
 ## Development
 
 ```bash
-python3 -m pipenv run python botai to test it out without setup.py installation
+python3 -m pipenv run python botai #To test it out without setup.py installation
 python3 -m pipenv check # Check for vulnerabilities and PEP 508 requirements
 python3 -m pipenv run pytest # run unit, system and integration tests
 ```
@@ -27,12 +27,17 @@ python3 setup.py install # Install the compiled and packaged application, dealt 
 ## Start the packaged application in docker
 
 ```bash
-docker-compoe -f docker-compose.yaml up --build --force-recreate
+docker-compose -f docker-compose.yaml up --build --force-recreate
 ```
 
 ## Sync setup.py installation file with Pipfile requirements file
 
 ```bash
 python3 -m pipenv run
-pipenv-setup sync # generate/sync Pipfile with setup.py file
+python3 -m pipenv run pipenv-setup sync  # generate/sync Pipfile with setup.py file
+```
+
+## Run unit tests
+```bash
+python3 -m pipenv run python -m unittest
 ```

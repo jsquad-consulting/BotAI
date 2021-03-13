@@ -12,3 +12,14 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
+from unittest import TestCase
+
+from botai.digits import digits
+
+
+class TestDigits(TestCase):
+    def test_the_accuracy(self):
+        self.digits = digits.Digits()
+        self.digits.trainModel()
+        loss, accuracy = self.digits.evaulate()
+        self.assertTrue(accuracy > 0.97)
