@@ -3,9 +3,7 @@ services:
     botai:
         build:
             context: .
-            dockerfile: Dockerfile
-        ports:
-            - 8080:8080
+            dockerfile: DockerfileWithTestsAndApplicationVerification
         healthcheck:
             test: ["CMD-SHELL", "sh -c 'echo ready || exit 1'"]
             interval: 10s
