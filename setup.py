@@ -181,7 +181,7 @@ setup(
         "pipenv-setup==3.1.1; python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2, 3.3' and python_version < '4'",
         "pipfile==0.0.2",
         "plette[validation]==0.2.3; python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2, 3.3'",
-        "protobuf==3.14.0",
+        "protobuf==3.15.0",
         "pyasn1==0.4.8",
         "pyasn1-modules==0.2.8",
         "pyparsing==2.4.7; python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2, 3.3'",
